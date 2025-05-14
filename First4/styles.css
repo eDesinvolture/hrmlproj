@@ -1,0 +1,710 @@
+*{
+    box-sizing: border-box; 
+    margin: 0; /* убирает внешние отступы у всех элементов */
+    padding: 0; /* убирает внешние отступы у всех элементов */
+}
+
+body {
+    background-color: #F5F5DC;
+    min-height: 100vh; /*чтобы страница всегда занимала весь экран*/
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.background-image {
+    position: absolute;
+    top: 0; /*прижимает изображение к верхнему углу */
+    left: 0; /*прижимает изображение к левому углу */
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.pinimg.com/originals/c8/55/9b/c8559b9ad29cb437141ddb3045db6e23.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+header {
+    padding: 1% 5%;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30%; /*расстояние между элементами */
+}
+
+.nav-link {
+    color: white;
+    font-size:24px;
+    text-decoration: none;
+    font-weight: bold
+}
+
+main {
+    flex: 1;
+    padding-bottom: 100px;
+}
+.main-page main {
+    padding: 20vh 0 0 6%;
+    max-width: 90%;
+}
+.main-headers {
+    display: flex;
+    justify-content: space-between; /* распределяет элементы по краям контейнера */
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.cities {
+    font-size: 24px;
+    gap: 40px;
+    margin-top: 20%; /* внешний отсуп сверху */
+    margin-right: 15%;
+}
+
+h1 {
+    font-size: 60px;
+    line-height: 1.2; /* межстрочный интервал*/
+    max-width: 55%;
+    width: 100%;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    max-width: 25%;
+    width: 100%;
+    margin: 0 0;
+    line-height: 1.3;
+}
+.cities {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-right: 15%;
+    flex-shrink: 0;
+}
+.cta-button {
+    background-color: #5D58F4;
+    color: white;
+    font-size: 28px;
+    padding: 15px 40px;
+    margin: 25px 0;
+    border-radius: 50px;
+}
+
+footer {
+    color: black;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #F5F5DC;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 5%;
+    position: absolute;
+}
+
+.footer-left {
+    margin-bottom: 50px;
+}
+
+.footer-right {
+    margin-bottom: 50px;
+}
+
+
+/* Стили для страницы отелей */
+.hotels-main {
+    padding: 1% 5% 10%;
+    max-width: 90%;
+    position: relative;
+}
+
+.hotels-page {
+    background-color: #F5F5DC;
+}
+
+.hotels-header {
+    background-color: #E8DCCA;
+    height: 15vh;
+    max-height: 123px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 0 5%;
+}
+
+.hotel-container {
+    padding: 0;
+}
+
+.hotel-item {
+    display: flex;
+    gap: 40px;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #e8dcca77;
+    border-radius: 25px;
+}
+
+.hotel-image {
+    width: 50%;
+    max-width: 800px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.hotel-info {
+    position: relative;
+    flex: 1;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+
+.hotel-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    max-width: 80%;
+}
+
+.hotel-price {
+    font-size: 24px;
+    color: #5D58F4;
+    margin-bottom: 15px;
+}
+
+.hotel-address {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.details-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #5D58F4;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hotels-footer {
+    background-color: #FFEFD8;
+    color: #333;
+    width: 100%;
+}
+
+
+/* Стили для страницы подробнее */
+.details-main {
+    padding:2% 0;
+    background-color: #F5F5DC;
+    max-width: 1400px;
+    margin: 0;
+    width: 95%; 
+}
+.hotel-details-card {
+    display: flex;
+    gap: 40px;
+    padding: 1%;
+    background-color: #e8dcca77;
+    border-radius: 8px;
+    max-width: 100%;
+    margin-left: 10%; 
+    margin-bottom: 2%;
+}
+.details-info {
+    flex: 1;
+    position: relative;
+    padding-bottom: 2%;
+}
+
+.details-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #333;
+}
+
+.details-price {
+    font-size: 24px;
+    color: #5D58F4;
+    margin: 10px 0;
+}
+
+.details-address {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.details-services {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.details-services h2 {
+    width: 100;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.details-services ul {
+    list-style: none;
+    columns: 2;
+    column-gap: 40px;
+}
+
+.details-services li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.details-calendar {
+    margin-bottom: 30px;
+}
+
+.details-calendar h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.date-inputs {
+    display: flex;
+    gap: 20px;
+}
+
+.date-group {
+    flex: 1;
+}
+
+.date-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.date-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.details-book-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #5D58F4;
+    color: white;
+    padding: 2% 5%;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Стили для страницы контактов */
+.contacts-page {
+    background-color: #F5F5DC;
+}
+
+.contacts-main {
+    min-height: calc(100vh - 240px);
+}
+
+.contacts-container {
+    max-width: 800px;
+    margin: 0 0 0 20px;
+    text-align: center;
+}
+
+.contacts-title {
+    font-size: 32px;
+    color: #333;
+    margin: 0 0 3% 20%;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.address-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.address-box {
+    background: rgba(93, 88, 244, 0.1);
+    border: 2px solid #5D58F4;
+    border-radius: 20px;
+    padding: 5% 4%;
+    width: 100%;
+    max-width: 400px;
+}
+
+.address-box p {
+    color: #333;
+    font-size: 20px;
+    line-height: 1.4 ;
+    margin: 0;
+}
+
+/* Стили для формы */
+.form-page {
+    background-color: #F5F5DC;
+}
+
+.form-main {
+    min-height: calc(100vh - 240px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    background: #e8dcca77;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.form-title {
+    font-size: 40px;
+    margin: 0 0 5% 20%;
+    color: #333;
+    text-align: center;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-size: 26px;
+    color: #666;
+    font-weight: 500;
+}
+
+.form-group input {
+    padding: 15px 20px;
+    border: 2px solid #5D58F4;
+    border-radius: 10px;
+    font-size: 20px;
+    background: #ffffff;
+}
+
+.submit-button {
+    bottom: 0;
+    right: 0;
+    background-color: #5D58F4;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    margin: 0 0 0 25%;
+    width: 250px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Стили для отзывов */
+.reviews-page {
+  background-color: #F5F5DC;
+}
+
+.reviews-main {
+  padding: 2% 5% 150px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.review-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.reviews-column {
+  display: grid;
+  gap: 20px;
+}
+
+.review-item {
+  background: rgba(232, 220, 202, 0.5);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.review-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #5D58F4;
+  margin-bottom: 10px;
+}
+
+.review-text {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+
+
+@media (max-width: 1200px) {
+    .nav-link {
+      font-size: 20px;
+    }
+    
+    h1 {
+      font-size: 48px;
+      max-width: 70%;
+    }
+  
+    .hotel-image {
+      max-width: 600px;
+      height: 400px;
+    }
+  
+    /* Контакты */
+    .contacts-title {
+      margin-left: 10%;
+    }
+  
+    /* Форма */
+    .form-title {
+      margin-left: 15%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    nav {
+      gap: 20%;
+    }
+  
+    .hotel-image {
+      height: 350px;
+    }
+  
+    .details-services ul {
+      columns: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    main {
+      padding-bottom: 150px;
+    }
+  
+    nav {
+      gap: 15%;
+      flex-wrap: wrap;
+      padding: 0 5%;
+    }
+  
+    .main-headers {
+      flex-direction: column;
+      gap: 30px;
+      padding: 0 5%;
+    }
+  
+    h1 {
+      font-size: 36px;
+      max-width: 100%;
+      padding-right: 5%;
+    }
+  
+    h2 {
+      font-size: 28px;
+      max-width: 100%;
+    }
+  
+    .cities {
+      margin: 0;
+      font-size: 20px;
+      padding: 0 5%;
+    }
+  
+    /* Отели */
+    .hotel-item {
+      flex-direction: column;
+      gap: 20px;
+      margin: 20px 5%;
+      width: auto;
+    }
+  
+    .hotel-image {
+      width: 100%;
+      height: 300px;
+      max-width: 100%;
+    }
+  
+    .details-button {
+      position: static;
+      margin: 20px 0 0;
+      width: 100%;
+    }
+  
+    /* Детали отеля */
+    .details-main {
+      padding: 2% 5% 150px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  
+    .hotel-details-card {
+      flex-direction: column;
+      margin: 0 5% 2%;
+      padding: 5%;
+      width: auto;
+    }
+  
+    .details-book-button {
+      position: static;
+      margin: 20px 0 0;
+      width: 100%;
+    }
+  
+    /* Контакты */
+    .contacts-title {
+      margin: 0 5% 3%;
+      font-size: 28px;
+      width: 90%;
+    }
+  
+    .contacts-container {
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+  
+    .address-box {
+      margin: 0 auto;
+    }
+  
+    /* Форма */
+    .form-main {
+      padding: 40px 5% 150px;
+    }
+  
+    .form-title {
+      margin: 0 0 5%;
+      font-size: 32px;
+      width: 100%;
+    }
+  
+    .form-container {
+      padding: 20px;
+    }
+  
+    .submit-button {
+      margin: 20px 0 0;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    nav {
+      gap: 10%;
+      justify-content: space-between;
+      padding: 0 2%;
+    }
+  
+    .nav-link {
+      font-size: 18px;
+    }
+  
+    h1 {
+      font-size: 32px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    .cta-button {
+      font-size: 20px;
+      padding: 12px 30px;
+    }
+  
+    /* Детали отеля */
+    .details-title {
+      font-size: 28px;
+    }
+  
+    .details-services li {
+      font-size: 16px;
+    }
+  
+    /* Форма */
+    .form-group label {
+      font-size: 20px;
+    }
+  
+    .form-group input {
+      font-size: 16px;
+      padding: 12px 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    nav {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding: 10px 0;
+    }
+  
+    .nav-link {
+      font-size: 16px;
+    }
+  
+    .hotel-image {
+      height: 250px;
+    }
+  
+    .address-box p {
+      font-size: 14px;
+    }
+  
+    .submit-button {
+      font-size: 16px;
+    }
+  }
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:display=swap');
