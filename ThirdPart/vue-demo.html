@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Лаба Vue.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; }
+    input { margin-bottom: 10px; display: block; }
+    ul { margin-top: 20px; }
+    button { margin-right: 10px; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Двустороннее и одностороннее связывание -->
+     <!-- v-model="name": привязывает значение поля ввода к переменной name
+     {{ name }}: показывает введённое имя (односторонняя привязка) -->
+    <input v-model="name" placeholder="Введите имя">
+    <p>Привет, {{ name }}!</p>
+
+    <!-- Связывание атрибут c переменной hint -->
+    <input :placeholder="hint"> 
+
+    <input v-model="filter" placeholder="Введите что-нибудь...">
+    <p>Вы ввели: {{ filter }}</p>
+
+    <!-- Список через массив -->
+    <ul>
+      <li v-for="item in items" :key="item.id">{{ item.title }}</li>
+    </ul>
+
+    <!-- Условная отрисовка -->
+    <button @click="toggle">Показать/Скрыть</button>
+    <p v-if="showText">Этот текст пропадает еслить нажать на кнопку</p>
+
+    <!-- Обработка события -->
+    <button @click="sayHello">Нажми меня</button>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          name: '',
+          hint: 'Подсказка: введите что-нибудь...',
+          filter: '',
+          showText: true,
+          items: [
+            { id: 1, title: "Новость 1" },
+            { id: 2, title: "Новость 2" },
+            { id: 3, title: "Новость 3" },
+            { id: 4, title: "Новость 4" },
+            { id: 5, title: "Новость 5" },
+            { id: 6, title: "Новость 6" },
+            { id: 7, title: "Новость 7" },
+            { id: 8, title: "Новость 8" },
+            { id: 9, title: "Новость 9" },
+            { id: 10, title: "Новость 10" }
+          ]
+        };
+      },
+      methods: {
+        sayHello() {
+          alert("Привет от Vue!");
+        },
+        toggle() {
+          this.showText = !this.showText;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
