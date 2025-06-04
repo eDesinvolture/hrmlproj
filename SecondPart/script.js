@@ -22,7 +22,7 @@ array.push(4);
 console.log("Дополненный массив")
 console.log(array);
 
-str = string + string1
+let str = string + string1
 alert(str);
 
 console.log("Задание 2"); 

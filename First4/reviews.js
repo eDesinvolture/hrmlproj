@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const style = document.createElement('style');
-    style.textContent = style.textContent = `
+    style.textContent = `
      #toggleForm {
         display: block;
         margin: 20px 0 30px 120px;
